@@ -108,4 +108,5 @@ var config = {
   "ofmeetLiveStream": false,
   "focusUserJid": "focus@pade.chat",
   "isBrand": false
+  "startWithVideoMuted": true
 };
