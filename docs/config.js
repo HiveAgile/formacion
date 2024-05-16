@@ -10,8 +10,8 @@ var config = {
   "constraints": {"video": {
     "width": {
       "ideal": 1280,
-      "min": 426,
-      "max": 3840
+      "min": 640,
+      "max": 1920
     },
     "aspectRatio": 16 / 9,
     "height": {
@@ -28,9 +28,9 @@ var config = {
       "360": "standard"
     },
     "maxBitratesVideo": {"VP9": {
-      "standard": 500000,
+      "standard": 800000,
       "high": 1500000,
-      "low": 200000
+      "low": 300000
     }},
     "preferredCodec": "VP9"
   },
@@ -43,10 +43,10 @@ var config = {
   "enableForcedReload": true,
   "desktopSharingFrameRate": {
     "min": 5,
-    "max": 25
+    "max": 15
   },
-  "channelLastN": -1,
-  "adaptiveLastN": false,
+  "channelLastN": 4, // Limitar el número de videos visibles a la vez
+  "adaptiveLastN": true, // Habilitar la adaptación del número de videos
   "hosts": {
     "domain": "pade.chat",
     "muc": "conference.pade.chat"
@@ -58,7 +58,7 @@ var config = {
   "prejoinPageEnabled": false,
   "useTurnUdp": false,
   "desktopSharingChromeDisabled": false,
-  "disableAdaptiveSimulcast": true,
+  "disableAdaptiveSimulcast": false, // Permitir la transmisión de video adaptativa
   "enableUnifiedOnChrome": true,
   "stereo": false,
   "enableClosePage": false,
@@ -68,7 +68,7 @@ var config = {
   "useIPv6": false,
   "startBitrate": 800,
   "enableWelcomePage": true,
-  "maxFullResolutionParticipants": -1,
+  "maxFullResolutionParticipants": 2, // Limitar el número de participantes en resolución completa
   "useStunTurn": false,
   "bosh": "https://pade.chat:5443/http-bind/",
   "enableNoAudioDetection": true,
@@ -78,13 +78,13 @@ var config = {
   "recordingType": "colibri",
   "clientNode": "http://igniterealtime.org/ofmeet/jitsi-meet/",
   "conferences": [],
-  "enableNoisyMicDetection": true,
+  "enableNoisyMicDetection": false,
   "desktopSharingFirefoxDisabled": false,
   "logStats": false,
   "useRtcpMux": true,
   "requireDisplayName": true,
   "startVideoMuted": 9,
-  "adaptiveSimulcast": false,
+  "adaptiveSimulcast": true, // Permitir la transmisión de video adaptativa
   "iceServers": "{'iceServers':[{'url': 'stun:jitsi.free-solutions.org:3479'},{url: 'turn:jitsi.free-solutions.org:3479', credential: 'tatafutz',username: 'turnuser'}]}",
   "ofmeetWebAuthnEnabled": false,
   "ofmeetWinSSOEnabled": false,
@@ -103,10 +103,10 @@ var config = {
     "tab"
   ],
   "webrtcIceUdpDisable": false,
-  "disableSimulcast": true,
+  "disableSimulcast": false, // Permitir la transmisión simultánea
   "startAudioOnly": false,
   "ofmeetLiveStream": false,
   "focusUserJid": "focus@pade.chat",
-  "isBrand": false
+  "isBrand": false,
   "startWithVideoMuted": true
 };
